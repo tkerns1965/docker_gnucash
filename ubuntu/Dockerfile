@@ -17,6 +17,7 @@ LABEL io.k8s.description="Headless VNC Container with Xfce window manager, firef
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
     NO_VNC_PORT=6901
+
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
 ### Envrionment config
@@ -28,8 +29,9 @@ ENV HOME=/headless \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1366×768 \
-    VNC_PW=vncpassword \
+    VNC_PW=${VNC_PASSWORD} \
     VNC_VIEW_ONLY=false
+
 WORKDIR $HOME
 
 ### Add all install scripts for further steps
