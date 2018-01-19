@@ -45,18 +45,19 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 RUN $INST_SCRIPTS/tigervnc.sh
 RUN $INST_SCRIPTS/no_vnc.sh
 
-### Install firefox and chrome browser
-# RUN $INST_SCRIPTS/firefox.sh
-# RUN $INST_SCRIPTS/chrome.sh
-
 ### Install xfce UI
 RUN $INST_SCRIPTS/xfce_ui.sh
 ADD ./src/common/xfce/ $HOME/
 
 ### configure startup
 RUN $INST_SCRIPTS/libnss_wrapper.sh
-ADD ./src/common/scripts $STARTUPDIR
+ADD ./src/common/scripts $STARTUPDIR/
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
+
+### Install gnucash
+ADD ./src/gnucash/ $INST_SCRIPTS/
+RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+RUN $INST_SCRIPTS/gnucash.sh
 
 USER 1984
 
