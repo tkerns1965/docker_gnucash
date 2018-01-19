@@ -28,7 +28,7 @@ ENV HOME=/headless \
     NO_VNC_HOME=/headless/noVNC \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1366×768 \
+    VNC_RESOLUTION=1366x768 \
     VNC_PW=${VNC_PASSWORD} \
     VNC_VIEW_ONLY=false
 
