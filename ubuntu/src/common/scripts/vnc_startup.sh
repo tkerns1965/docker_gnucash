@@ -14,7 +14,7 @@ if [[ $1 =~ --skip ]]; then
 fi
 
 ## write correct window size to chrome properties
-$STARTUPDIR/chrome-init.sh
+# $STARTUPDIR/chrome-init.sh
 
 ## resolve_vnc_connection
 VNC_IP=$(hostname -i)
