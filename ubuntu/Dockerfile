@@ -20,6 +20,8 @@ ENV DISPLAY=:1 \
 
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
+ARG VNC_PASSWORD
+
 ### Envrionment config
 ENV HOME=/headless \
     TERM=xterm \
