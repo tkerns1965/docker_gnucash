@@ -6,10 +6,9 @@ services:
             context: ubuntu
             args:
                 - UBUNTU_VERSION=16.04
+                - VNC_PASSWORD=${VNC_PASSWORD}
         image: docker_gnucash
         container_name: docker_gnucash1
         ports:
             - "5901:5901"
             - "6901:6901"
-        environment:
-            - VNC_PASSWORD=${VNC_PASSWORD}
