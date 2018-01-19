@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    ubuntu:
+        build:
+            context: ubuntu
+            args:
+                - UBUNTU_VERSION=16.04
+        image: ubuntu_vnc
+        container_name: ubuntu_vnc1
+        ports:
+            - "5901:5901"
+            - "6901:6901"
